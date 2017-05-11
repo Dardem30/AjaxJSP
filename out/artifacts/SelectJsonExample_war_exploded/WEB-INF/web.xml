@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <servlet>
+        <servlet-name>ServletJSon</servlet-name>
+        <servlet-class>by.servlets.ServletJSon</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResponseServlet</servlet-name>
+        <servlet-class>by.servlets.ResponseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponseServlet</servlet-name>
+        <url-pattern>/ResponseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletJSon</servlet-name>
+        <url-pattern>/ServletJSon</url-pattern>
+    </servlet-mapping>
+</web-app>

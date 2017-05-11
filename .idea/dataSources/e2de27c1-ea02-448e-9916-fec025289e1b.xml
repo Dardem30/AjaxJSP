@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="tutorial@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="tutorial">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="adminka"/>
+    <schema id="4" parent="1" name="bookmanager"/>
+    <schema id="5" parent="1" name="development"/>
+    <schema id="6" parent="1" name="enemy"/>
+    <schema id="7" parent="1" name="forenkeys"/>
+    <schema id="8" parent="1" name="hero"/>
+    <schema id="9" parent="1" name="hope"/>
+    <schema id="10" parent="1" name="information_schema"/>
+    <schema id="11" parent="1" name="mysql"/>
+    <schema id="12" parent="1" name="newbandiana"/>
+    <schema id="13" parent="1" name="performance_schema"/>
+    <schema id="14" parent="1" name="shop"/>
+    <schema id="15" parent="1" name="universitet"/>
+    <table id="16" parent="2" name="adminka"/>
+    <table id="17" parent="2" name="employee"/>
+    <table id="18" parent="2" name="employee_meeting"/>
+    <table id="19" parent="2" name="imageexample"/>
+    <table id="20" parent="2" name="meeting"/>
+    <column id="21" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="22" parent="16" name="login">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="16" name="password">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="24" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="17" name="employee_id">
+      <Position>1</Position>
+      <DataType>bigint(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="17" name="firstname">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="17" name="lastname">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="17" name="image">
+      <Position>4</Position>
+      <DataType>mediumblob|0</DataType>
+    </column>
+    <key id="29" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>employee_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="18" name="employee_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="18" name="meeting_id">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="32" parent="18" name="FK_MEETING">
+      <ColNames>meeting_id</ColNames>
+    </index>
+    <key id="33" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>employee_id
+meeting_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="18" name="FK_EMPLOYEE">
+      <ColNames>employee_id</ColNames>
+      <RefSchemaName>tutorial</RefSchemaName>
+      <RefTableName>employee</RefTableName>
+      <RefColNames>employee_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="35" parent="18" name="FK_MEETING">
+      <ColNames>meeting_id</ColNames>
+      <RefSchemaName>tutorial</RefSchemaName>
+      <RefTableName>meeting</RefTableName>
+      <RefColNames>meeting_id</RefColNames>
+    </foreign-key>
+    <column id="36" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="19" name="image">
+      <Position>2</Position>
+      <DataType>blob|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="38" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="20" name="meeting_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="20" name="subject">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="20" name="meeting_date">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="42" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>meeting_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
